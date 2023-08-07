@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Task } from './task/task';
+import todoList from './__mocks__/todoList';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'todo';
+  taskList: Task[] = todoList;
 }

@@ -3,6 +3,8 @@
 <section class="main">
   <h1 class="title">My tasks</h1>
   <div class="task-list">
-    <app-task></app-task>
+    <ul *ngFor="let task of taskList">
+      <app-task [task]="task" />
+    </ul>
   </div>
 </section>
