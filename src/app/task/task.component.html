@@ -1,4 +1,5 @@
-<li class="task">
+<!--INFO: use [ngClass] to style dinamically-->
+<li class="task" [ngClass]="isDone ? 'task-done' : 'task-active'">
   <p>{{ task.title }}</p>
-  <div>CHECKBOX</div>
+  <input type="checkbox" name="status" id="status" [(ngModel)]="isDone" />
 </li>
