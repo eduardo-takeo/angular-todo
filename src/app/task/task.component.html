@@ -1,5 +1,10 @@
 <!--INFO: use [ngClass] to style dinamically-->
 <li class="task" [ngClass]="isDone ? 'task-done' : 'task-active'">
   <p>{{ task.title }}</p>
-  <input type="checkbox" name="status" id="status" [(ngModel)]="isDone" />
+  <span>
+    <input type="checkbox" name="status" id="status" [(ngModel)]="isDone" />
+    <button class="delete-btn">
+      <img src="assets/icons/trash.svg" alt="trash-icon" />
+    </button>
+  </span>
 </li>

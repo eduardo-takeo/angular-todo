@@ -14,4 +14,16 @@
   &-done {
     text-decoration: line-through;
   }
+
+  & > span {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+
+.delete-btn {
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
 }
