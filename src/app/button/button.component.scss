@@ -1,14 +1,26 @@
 .btn {
-  background-color: #373737;
-  color: #fff;
   padding: 1.5rem 3rem;
   border-radius: 14px;
   letter-spacing: 1px;
+  border: 1px solid #373737;
   cursor: pointer;
   transition: all 0.2s;
+}
+
+.primary {
+  background-color: #373737;
+  color: #fff;
 
   &:hover {
-    background-color: #535353;
-    transform: translateY(-0.5rem);
+    background-color: #000;
+  }
+}
+
+.secondary {
+  background-color: #fff;
+  color: #373737;
+
+  &:hover {
+    background-color: #e8e8e8;
   }
 }

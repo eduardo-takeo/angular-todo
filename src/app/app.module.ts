@@ -6,9 +6,10 @@ import { HeaderComponent } from './header/header.component';
 import { TaskComponent } from './task/task.component';
 import { FormsModule } from '@angular/forms';
 import { ButtonComponent } from './button/button.component';
+import { ModalComponent } from './modal/modal.component';
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, TaskComponent, ButtonComponent],
+  declarations: [AppComponent, HeaderComponent, TaskComponent, ButtonComponent, ModalComponent],
   imports: [BrowserModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
