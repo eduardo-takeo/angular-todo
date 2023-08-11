@@ -1,15 +1,21 @@
-<div class="modal">
-  <h1>Edit task</h1>
-  <input
-    type="text"
-    name="text"
-    id="text"
-    class="modal-input"
-    value="{{ text }}"
-  />
-  <span>
-    <app-button label="Cancel" color="secondary"></app-button>
-    <app-button label="Done"></app-button>
-  </span>
+<div *ngIf="isVisible">
+  <div class="modal">
+    <h1>Edit task</h1>
+    <input
+      type="text"
+      name="text"
+      id="text"
+      class="modal-input"
+      value="{{ text }}"
+    />
+    <span>
+      <app-button
+        label="Cancel"
+        color="secondary"
+        (btnClick)="onCancelClick()"
+      ></app-button>
+      <app-button label="Done"></app-button>
+    </span>
+  </div>
+  <div class="overlay"></div>
 </div>
-<div class="overlay"></div>

@@ -7,4 +7,9 @@ import { Component, Input } from '@angular/core';
 })
 export class ModalComponent {
   @Input() text: string = '';
+  @Input() isVisible: boolean = false;
+
+  onCancelClick() {
+    this.isVisible = false;
+  }
 }

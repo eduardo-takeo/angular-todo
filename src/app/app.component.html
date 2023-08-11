@@ -9,8 +9,8 @@
   </div>
 
   <div class="btn-container">
-    <app-button label="Create task" />
+    <app-button label="Create task" (btnClick)="onCreateTaskClicked()" />
   </div>
 </section>
 
-<!-- <app-modal></app-modal> -->
+<app-modal [isVisible]="isModalVisible"></app-modal>

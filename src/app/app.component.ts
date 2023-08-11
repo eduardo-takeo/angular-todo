@@ -9,4 +9,13 @@ import todoList from './__mocks__/todoList';
 })
 export class AppComponent {
   taskList: Task[] = todoList;
+  isModalVisible: boolean = false;
+
+  onCreateTaskClicked() {
+    this.isModalVisible = true;
+  }
 }
+
+// BUGFIX:
+// modal is not opening when it is closed,
+// this happens because isVisible on modal.component resets to false, but isModalVisible on app.component doesnt
