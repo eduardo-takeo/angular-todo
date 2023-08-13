@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Task } from './task';
 
 @Component({
@@ -9,4 +9,10 @@ import { Task } from './task';
 export class TaskComponent {
   @Input({ required: true }) task!: Task; //INFO: Props -> use @Input annotation
   isDone: boolean = false; //INFO: State -> use [(ngModel)] to bind a property to the class attribute
+
+  @Output() onDeleteTaskClick = new EventEmitter();
+
+  onClick(task: Task) {
+    this.onDeleteTaskClick.emit();
+  }
 }

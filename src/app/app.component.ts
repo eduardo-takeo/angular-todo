@@ -14,6 +14,14 @@ export class AppComponent {
   onCreateTaskClicked() {
     this.isModalVisible = true;
   }
+
+  onDeleteTaskClicked(task: Task) {
+    const newTaskList = this.taskList.filter(
+      (listTask) => listTask.id != task.id
+    );
+
+    this.taskList = newTaskList;
+  }
 }
 
 // BUGFIX:
