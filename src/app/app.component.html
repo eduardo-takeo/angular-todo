@@ -2,10 +2,22 @@
 
 <section class="main">
   <h1 class="title">My tasks</h1>
-  <div class="task-list">
-    <ul *ngFor="let task of taskList">
-      <app-task [task]="task" (onDeleteTaskClick)="onDeleteTaskClicked(task)" />
-    </ul>
+  <div class="task-container">
+    <div *ngIf="taskList.length; else noResultsBlock" class="task-list">
+      <ul *ngFor="let task of taskList">
+        <app-task
+          [task]="task"
+          (onDeleteTaskClick)="onDeleteTaskClicked(task)"
+        />
+      </ul>
+    </div>
+
+    <ng-template #noResultsBlock>
+      <div class="no-results">
+        <h3>No tasks found</h3>
+        <p>Add tasks to appear here ✏️</p>
+      </div>
+    </ng-template>
   </div>
 
   <div class="btn-container">
