@@ -7,7 +7,7 @@
       id="text"
       placeholder="New task"
       class="modal-input"
-      value="{{ text }}"
+      [(ngModel)]="inputText"
     />
     <span>
       <app-button
@@ -15,7 +15,7 @@
         color="secondary"
         (btnClick)="hideModal()"
       ></app-button>
-      <app-button label="Done"></app-button>
+      <app-button label="Done" (btnClick)="addItem(inputText)"></app-button>
     </span>
   </div>
   <div class="overlay"></div>

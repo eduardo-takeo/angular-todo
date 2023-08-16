@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Task } from './task/task';
-import todoList from './__mocks__/todoList';
 import { ModalService } from './modal/modal.service';
+import { TaskService } from './task/task.service';
 
 @Component({
   selector: 'app-root',
@@ -9,16 +9,17 @@ import { ModalService } from './modal/modal.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  taskList: Task[] = todoList;
+  taskList: Task[] = [];
 
-  constructor(private modalService: ModalService) {}
+  constructor(
+    private taskService: TaskService,
+    private modalService: ModalService
+  ) {
+    this.taskList = this.taskService.getItems();
+  }
 
   onDeleteTaskClicked(task: Task) {
-    const newTaskList = this.taskList.filter(
-      (listTask) => listTask.id != task.id
-    );
-
-    this.taskList = newTaskList;
+    this.taskService.removeItem(task);
   }
 
   openModal() {

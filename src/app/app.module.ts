@@ -9,6 +9,7 @@ import { ButtonComponent } from './button/button.component';
 import { ModalComponent } from './modal/modal.component';
 
 import { ModalService } from './modal/modal.service';
+import { TaskService } from './task/task.service';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,7 @@ import { ModalService } from './modal/modal.service';
     ModalComponent,
   ],
   imports: [BrowserModule, FormsModule],
-  providers: [ModalService],
+  providers: [TaskService, ModalService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
