@@ -1,15 +1,20 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ModalService } from './modal.service';
 
 @Component({
   selector: 'app-modal',
   templateUrl: './modal.component.html',
   styleUrls: ['./modal.component.scss'],
 })
-export class ModalComponent {
+export class ModalComponent implements OnInit {
   @Input() text: string = '';
-  @Input() isVisible: boolean = false;
+  isVisible$ = this.modalService.isVisible$;
 
-  onCancelClick() {
-    this.isVisible = false;
+  constructor(private modalService: ModalService) {}
+
+  ngOnInit(): void {}
+
+  hideModal() {
+    this.modalService.hideModal();
   }
 }

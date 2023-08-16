@@ -21,8 +21,8 @@
   </div>
 
   <div class="btn-container">
-    <app-button label="Create task" (btnClick)="onCreateTaskClicked()" />
+    <app-button label="Create task" (btnClick)="openModal()" />
   </div>
 </section>
 
-<app-modal [isVisible]="isModalVisible"></app-modal>
+<app-modal></app-modal>

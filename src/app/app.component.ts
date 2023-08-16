@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Task } from './task/task';
 import todoList from './__mocks__/todoList';
+import { ModalService } from './modal/modal.service';
 
 @Component({
   selector: 'app-root',
@@ -9,11 +10,8 @@ import todoList from './__mocks__/todoList';
 })
 export class AppComponent {
   taskList: Task[] = todoList;
-  isModalVisible: boolean = false;
 
-  onCreateTaskClicked() {
-    this.isModalVisible = true;
-  }
+  constructor(private modalService: ModalService) {}
 
   onDeleteTaskClicked(task: Task) {
     const newTaskList = this.taskList.filter(
@@ -22,8 +20,8 @@ export class AppComponent {
 
     this.taskList = newTaskList;
   }
-}
 
-// BUGFIX:
-// modal is not opening when it is closed,
-// this happens because isVisible on modal.component resets to false, but isModalVisible on app.component doesnt
+  openModal() {
+    this.modalService.showModal();
+  }
+}

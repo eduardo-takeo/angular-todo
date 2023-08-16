@@ -8,10 +8,18 @@ import { FormsModule } from '@angular/forms';
 import { ButtonComponent } from './button/button.component';
 import { ModalComponent } from './modal/modal.component';
 
+import { ModalService } from './modal/modal.service';
+
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, TaskComponent, ButtonComponent, ModalComponent],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    TaskComponent,
+    ButtonComponent,
+    ModalComponent,
+  ],
   imports: [BrowserModule, FormsModule],
-  providers: [],
+  providers: [ModalService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -1,4 +1,4 @@
-<div *ngIf="isVisible">
+<div *ngIf="isVisible$ | async">
   <div class="modal">
     <h1>Edit task</h1>
     <input
@@ -13,7 +13,7 @@
       <app-button
         label="Cancel"
         color="secondary"
-        (btnClick)="onCancelClick()"
+        (btnClick)="hideModal()"
       ></app-button>
       <app-button label="Done"></app-button>
     </span>
