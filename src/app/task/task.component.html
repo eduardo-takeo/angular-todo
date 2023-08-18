@@ -2,7 +2,7 @@
   <p>{{ task.title }}</p>
   <span>
     <input type="checkbox" name="status" id="status" [(ngModel)]="isDone" />
-    <button class="delete-btn" (click)="onClick(task)">
+    <button class="delete-btn" (click)="onDeleteClicked(task)">
       <img src="assets/icons/trash.svg" alt="trash-icon" />
     </button>
   </span>
