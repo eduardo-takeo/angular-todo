@@ -13,6 +13,10 @@ export class TaskComponent {
 
   constructor(private taskService: TaskService) {}
 
+  onTaskClicked(task: Task) {
+    console.log(task); //TODO: implement Edit Task function
+  }
+
   onDeleteClicked(task: Task) {
     this.taskService.removeItem(task);
   }

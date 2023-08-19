@@ -1,4 +1,8 @@
-<li class="task" [ngClass]="isDone ? 'task-done' : 'task-active'">
+<li
+  class="task"
+  [ngClass]="isDone ? 'task-done' : 'task-active'"
+  (click)="onTaskClicked(task)"
+>
   <p>{{ task.title }}</p>
   <span>
     <input type="checkbox" name="status" id="status" [(ngModel)]="isDone" />
