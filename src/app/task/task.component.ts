@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Task } from './task';
+import { TaskService } from './task.service';
 
 @Component({
   selector: 'app-task',
@@ -10,9 +11,9 @@ export class TaskComponent {
   @Input({ required: true }) task!: Task;
   isDone: boolean = false;
 
-  @Output() onDeleteTaskClick = new EventEmitter();
+  constructor(private taskService: TaskService) {}
 
-  onClick(task: Task) {
-    this.onDeleteTaskClick.emit();
+  onDeleteClicked(task: Task) {
+    this.taskService.removeItem(task);
   }
 }
